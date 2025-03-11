@@ -1,14 +1,14 @@
 /* 
     Callback function are functions passed as arguments to other function and executed later, typically after an asynchronous operation completes.
 */
-
+function me(){
+    console.log("shuvadeep");
+}
 function greet(callback){
     console.log("hello ");
     callback();
 } 
-function me(){
-    console.log("shuvadeep");
-}
+
 greet(me);
 
 
