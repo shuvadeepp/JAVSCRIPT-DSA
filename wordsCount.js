@@ -17,3 +17,16 @@ const wordCount =(param)=> {
 let str="Hello World, This is PHP Code. PHP";
 let wordPrint = wordCount(str);
 console.log(wordPrint)
+
+/* using pre define function array reduce */
+function wordCount(word){
+    let arr = word.toLowerCase().split(" ");
+    let count = arr.reduce((acc, word) => {
+        acc[word] = (acc[word] || 0) +1;
+        return acc;
+    }, {});
+    return count;
+}
+
+let word = wordCount("Hello World");
+console.log(word)

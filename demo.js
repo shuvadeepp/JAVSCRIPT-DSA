@@ -839,17 +839,145 @@ console.log(isValid("(]")); */
 // console.log(twoSum([2,7,11,15], 9));    // Output: [0,1]
 // console.log(twoSum([3,2,4], 6));        // Output: [1,2]
 // console.log(twoSum([3,3], 6));          // Output: [0,1]
-function removeDuplicates(arr){
-    let unique = [];
-    for(let i=0; i<arr.length; i++){
-        // console.log(arr[i])
-        if(unique.indexOf(arr[i])== -1){
-            unique.push(arr[i]);
-        }
-    }
-    // console.log(unique)
-    return unique;
-}
+// function removeDuplicates(arr){
+//     let unique = [];
+//     for(let i=0; i<arr.length; i++){
+//         // console.log(arr[i])
+//         if(unique.indexOf(arr[i])== -1){
+//             unique.push(arr[i]);
+//         }
+//     }
+//     // console.log(unique)
+//     return unique;
+// }
 
-let removedArr = removeDuplicates([1, 2, 1, 3, 4, 2, 2, 1, 5, 6]);
-console.log(removedArr);
+// let removedArr = removeDuplicates([1, 2, 1, 3, 4, 2, 2, 1, 5, 6]);
+// console.log(removedArr);
+
+// function checkVowel(str){
+//     let count=0;
+//     for(let i=0; i<str.length; i++){
+//         let chkVawelArr = ['a', 'e', 'i', 'o', 'u'];
+//         if(chkVawelArr.includes(str[i])){
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+// let string = "Hello world, This is a program";
+// let chkVowel = checkVowel(string);
+// console.log(chkVowel);
+
+// function removeDuplicates(arr){
+//     let unique = [];
+//     for(let i=0; i<arr.length; i++){
+//         // console.log(unique.indexOf(arr[i]))
+//         if(unique.indexOf(arr[i])==-1){
+//             unique.push(arr[i]);
+//         }
+//     }
+//     return unique;
+// }
+
+// let removedArr = removeDuplicates([1, 2, 1, 3, 4, 2, 2, 1, 5, 6]);
+// console.log(removedArr);
+
+
+// function wordCount(str){
+//     let cnvrtArr = str.split(" ");
+//     let store = {};
+//     for(let i=0; i<cnvrtArr.length; i++){
+//         // console.log(str[i])
+//         let word = cnvrtArr[i];
+//         // console.log(store[char]);
+//         if(store[word] != undefined){
+//             store[word]++;
+//         }else{
+//             store[word]=1;
+//         }
+//     }
+//     return store;
+// }
+
+// let str="Hello World, This is PHP Code. PHP";
+// let wordPrint = wordCount(str);
+// console.log(wordPrint);
+
+ 
+// console.log(strFrmDate)
+
+// function compareDate(userDate) {
+//     let givenDate = new Date(userDate).getTime();  
+    
+//     let toDate = new Date("2025-03-01").getTime();
+//     let frmDate = new Date("2025-03-31").getTime();
+   
+
+//     let check = false;
+
+//     if (givenDate >= toDate && givenDate <= frmDate) { 
+//         check = true;
+//     } else {
+//         check = false;
+//     }
+//     return check;
+// }
+
+// let givenDates = "2025-04-31"; 
+// let printDate = compareDate(givenDates);
+// console.log(printDate);
+
+// const arr = [5,8,24,23,13,56,2,24,1,90];
+// let firstElem = arr[0];
+// for(let i=0; i<=arr.length; i++){
+//     if(arr[i] < firstElem){
+//         firstElem = arr[i];
+//     }
+// }
+// console.log(firstElem)
+
+// function showMessage(marks){
+//     // const message = marks ?? "Absent";
+//     const message = marks || "Absent";
+//     console.log(`Mark ${message}`);
+// }
+// showMessage(29);
+// showMessage(0);
+// showMessage(50);
+
+//  function letterCount(str){
+//     let lowCase = str.toLowerCase(); 
+//     let store = {};
+//     for(let i=0; i<=lowCase.length; i++){
+//         let char = lowCase[i]; 
+//         if(char >= 'a' && char <= 'z'){ 
+//             if(store[char] != undefined){
+//                 store[char]++;
+//             }else{
+//                 store[char]=1;
+//             }
+//         }
+//     } 
+//     return store;
+//  }
+
+// let letter_count = letterCount("Hello Worlds");
+// console.log(letter_count);
+
+// function wordCount(word){
+//     let arr = word.toLowerCase().split(" ");
+//     let count = arr.reduce((acc, word) => {
+//         acc[word] = (acc[word] || 0) +1;
+//         return acc;
+//     }, {});
+//     return count;
+// }
+
+// let word = wordCount("Hello World");
+// console.log(word)
+
+// const numbers = [10, 20, 30, 40, 50];
+// const sum = numbers.reduce((acc, numb) => acc + numb, 0);
+// console.log(sum);
+

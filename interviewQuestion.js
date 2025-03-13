@@ -51,3 +51,12 @@ function x(){
     }
 }
 x();
+/* 7. correct this answer */
+function showMessage(marks){
+    // const message = marks ?? "Absent";
+    const message = marks || "Absent";
+    console.log(`Mark ${message}`);
+}
+showMessage(29);
+showMessage(0);
+showMessage(50);
