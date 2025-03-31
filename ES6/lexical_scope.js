@@ -29,3 +29,14 @@ outer();
         1
 
 */
+
+
+function x(){
+    let a= 10;
+    function y(){
+        console.log(a);
+    }
+    a = 500; 
+    y();
+} 
+x();

@@ -60,3 +60,139 @@ function showMessage(marks){
 showMessage(29);
 showMessage(0);
 showMessage(50);
+
+/* 8. sum this using reduce function */
+const numbers = [10, 20, 30, 40];
+const sum = numbers.reduce((acc, numb) => acc + numb, 0);
+console.log(sum);
+
+/* 9.  This code prints 6 everytime. How to print 1,2,3,4,5,6 ? using closur method. */
+function x(){
+    function closur(x){
+        setTimeout(()=>{
+            console.log(x)
+        }, i * 1000)
+    }
+    for (var i = 1; i <= 5; i++) {
+        closur(i)
+    }
+}
+x();
+
+/* 10. What will be the output or below code ? */
+function x(){
+    let a= 10;
+    function y(){
+        console.log(a);
+    }
+    a = 500;
+    return y;
+}
+var z = x(); 
+z(); // output: 500
+
+/* 11. What’s the output of below logic  */
+function getData(){
+    console.log("running no error because of hoisted");
+}
+
+var getData1 =() =>{
+    console.log("err because of arrow function is not hoisted");
+}
+// error because of getData1 is arrow func cannot access top of call.
+
+/* 12. What’s the output of below code  */
+let arr= [1,2,3,4,5,6,7];
+arr.forEach((n) => {
+    if(n % 2 == 0){
+        break;
+    }
+    console.log(n);
+});
+// error because of break cannot work in forEach() and map().
+
+/* 13. Whats the output of below code  */
+setTimeout(() => console.log(1), 0);
+console.log(2);
+new Promise(res => {
+ console.log(3)
+ res();
+}).then(() => console.log(4));
+console.log(5);
+// output: 2, 3, 5, 4, 1
+
+/* 14. Output of below logic ? */
+async function foo() {
+    console.log("A");
+    await Promise.resolve();
+    console.log("B");
+    await new Promise(resolve => setTimeout(resolve, 0));
+    console.log("C");
+}
+console.log("D");
+foo();
+console.log("E")
+// output: D,A,E,B,C
+
+/* 15. Output of below logic ?  */
+function job(){
+    return new Promise((res, rej)=>{
+        rej();
+    })
+}
+
+let promise = job();
+
+promise.then(()=>{
+    console.log("111111111")
+}).then(()=>{
+    console.log("222222222")
+}).catch(()=>{
+    console.log("333333333")
+}).then(()=>{
+    console.log("444444444")
+})
+
+/* 16. Test your basics on comparision ? */
+let a = 3;
+let b = new Number(3);
+let c = 3;
+console.log(a === b)
+
+/* 17. explain example of promises: */
+function fetchData(){
+    return new Promise((res, rej)=>{
+        setTimeout(()=>{
+            res("data fatching...");
+        }, 2000)
+    })
+}
+
+async function getData(){
+    log("starting...");
+    const data = await fetchData();
+    console.log(data);
+    log("ending...");
+}
+getData();
+
+
+/* 18. what is the answer */
+let a = {
+    name: "shuvadeep",
+}
+let b = {
+    ...a
+}
+
+b.name="raja";
+log(a.name)
+
+/* 19.  */
+const chain = (a) => (b) => (c) => (d) => a + b + c + d;
+log(chain(4)(6)(8)(10))
+
+/* 20. write a code to output shows will this [ 1, 2, 3, 4,  5, 6, 7, 8, 9, 10 ] */
+var input = [1, 2, [3, 4, [5, 6], 7, 8], 9, 10];
+var output = input.flat(Infinity);
+log(output) // Output:  [ 1, 2, 3, 4,  5, 6, 7, 8, 9, 10 ]

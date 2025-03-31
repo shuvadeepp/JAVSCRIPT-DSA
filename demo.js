@@ -1,3 +1,5 @@
+const log = console.log;
+
 // let a = null;
 // let b;
 
@@ -981,3 +983,722 @@ console.log(isValid("(]")); */
 // const sum = numbers.reduce((acc, numb) => acc + numb, 0);
 // console.log(sum);
 
+// function showMessage(marks){
+//     const message = marks ?? "Absent";
+//     console.log(`Mark ${message}`);
+// }
+// showMessage(29);
+// showMessage(0);
+// showMessage(50);
+
+// var a = 10;
+// (function() { 
+//     console.log(a);
+//     var a = 20;
+// })();
+
+// console.log(typeof NaN);
+// console.log(typeof undefined);
+// console.log(typeof null);
+// console.log(null);
+
+
+// function x() {
+//     function closur(x) {
+//     // Set a timeout to log value of x after x seconds
+//     setTimeout(() => {
+//     console.log(x);
+//     }, x * 1000);
+//     };
+//     // Loop from 1 to 5
+//     for (var i = 1; i <= 5; i++) {
+//     // Call the closure function with current value of i
+//     closur(i);
+//     }
+//    }
+//    // Call the outer function x
+//    x()
+
+
+// function x(){
+//     function closur(x){
+//         setTimeout(()=>{
+//             console.log(x)
+//         }, i * 1000)
+//     }
+//     for (var i = 1; i <= 5; i++) {
+//         closur(i)
+//     }
+// }
+// x();
+
+
+// function x(){
+//     let a= 10;
+//     function y(){
+//         console.log(a);
+//     }
+//     a = 500;
+//     // return y;
+//     y();
+// }
+// // var z = x(); 
+// x();
+
+// getData();
+// getData1();
+
+// function getData(){
+//     console.log("running no error because of hoisted");
+// }
+
+// var getData1 =() =>{
+//     console.log("err because of arrow function is not hoisted");
+// }
+
+// function func() {
+//     try {
+//         console.log(1)
+//         return
+//     } catch (e) {
+//         console.log(2)
+//     } finally {
+//         console.log(3)
+//     }
+//     console.log(4)
+// }
+// func();
+
+// let arr= [1,2,3,4,5,6,7];
+// arr.forEach((n) => {
+//     if(n % 2 == 0){
+//         break;
+//     }
+//     console.log(n);
+// });
+
+// let a = true;
+// setTimeout(()=>{
+//     a = false;
+// }, 2000)
+
+// while(a){
+//     console.log('inside while');
+// }
+
+// setTimeout(() => console.log(1), 0);
+// console.log(2);
+// new Promise(res => {
+//  console.log(3)
+//  res();
+// }).then(() => console.log(4));
+// console.log(5);
+
+// async function foo() {
+//     console.log("A");
+//     await Promise.resolve();
+//     console.log("B");
+//     await new Promise(resolve => setTimeout(resolve, 0));
+//     console.log("C");
+// }
+// console.log("D");
+// foo();
+// console.log("E")
+   
+
+// let output = (function(x){  
+//     delete x;
+//     return x;
+// })
+// (3); 
+// console.log(output)
+
+// function getName1(){
+//     console.log(this.name)
+// }
+
+// Object.prototype.getName2 = () => {
+//     console.log(this.name);
+// }
+
+// let personObj = {
+//     name:"Tony",
+//     print:getName1
+// }
+// personObj.print();
+// personObj.getName2();
+
+// function job(){
+//     return new Promise((res, rej)=>{
+//         rej();
+//     })
+// }
+
+// let promise = job();
+
+// promise.then(()=>{
+//     console.log("111111111")
+// }).then(()=>{
+//     console.log("222222222")
+// }).catch(()=>{
+//     console.log("333333333")
+// }).then(()=>{
+//     console.log("444444444")
+// })
+
+// var a = 1;
+// function data1(){ 
+//     var a;
+//     if(!a){
+//         var a=10;
+//     }
+//     console.log(a);
+// }
+// data1()
+// console.log(a);
+
+// function guessArray() {
+//     let a = [1, 2];
+//     let b = [1, 2];
+//     console.log(a == b);
+//     console.log(a === b);
+// }
+// guessArray();
+
+// let a = 3;
+// let b = new Number(3);
+// let c = 3;
+// console.log(a === b)
+
+// let arr = [1,2,3,4,5];
+// console.log(typeof arr)
+
+// function letterCount(str){
+//     let lowCase = str.toLowerCase();
+//     let storeLetter = {};
+//     for(let i=0; i<=lowCase.length; i++){ 
+//         let char = lowCase[i];
+//         if(char >= 'a' && char <= 'z'){
+//             // log(storeLetter[char])
+//             if(storeLetter[char] != undefined){
+//                 storeLetter[char]++;
+//             }else{
+//                 storeLetter[char]=1;
+//             }
+//         }
+//     } 
+//     return storeLetter;
+// }
+
+// let letter = letterCount("Hello World");
+// log(letter)
+
+// let string = "php, javascript, java, dotnet";
+// let cnvrt = string.split(", ");
+// let removeElem = cnvrt.splice(2, 1);
+// let newElem = "Laravel";
+// let addElem = cnvrt.splice(2, 0, newElem);
+// let res = cnvrt.join(", ")
+// log(res)
+
+// function checkVowel(vowel){
+//     let count = 0;
+//     for(let i=0; i<=vowel.length; i++){
+//         chkVowelArr = ['a','e','i','o','u'];
+//         if(chkVowelArr.includes(vowel[i])){
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+// let chkVowel = "hello world";
+// let chk = checkVowel(chkVowel);
+// log(chk)
+
+// function is_palindrome(param){
+//     let rev = "";
+//     for(let i=param.length -1; i>=0; i--){
+//         // log(param[i])
+//         rev+=param[i];
+//     }
+//     if(rev == param){
+//         return true;
+//     }else{
+//         return false;
+//     }
+// }
+
+// let chkPalindrome = is_palindrome("525s"); 
+// log(chkPalindrome)
+
+// let arr = [5,4,3,2,1,0];
+// let newArr = [];
+// for(let i=arr.length -1; i>=0; i--){
+//     // log(arr[i])
+//     newArr.push(arr[i]);
+// }
+// log(newArr)
+
+// function removeDuplicates(arr){
+//     let unique = [];
+//     for(let i=0; i<arr.length; i++){
+//         if(unique.indexOf(arr[i]) == -1){
+//             unique.push(arr[i]);
+//         }
+//     }
+//     return unique;
+// }
+
+// let removedArr = removeDuplicates([1, 2, 1, 3, 4, 2, 2, 1, 5, 6]);
+// log(removedArr)
+
+// function twoSum(nums, target){
+//     let store = {}
+//     for(let i=0; i<=nums.length; i++){
+//         // log(nums[i])
+//         let comparoson = target - nums[i];
+//         // log(comparoson)
+//         if(store[comparoson] != undefined){
+//             return [store[comparoson], i];
+//         }
+//         store[nums[i]]=i;
+//     }
+//     return [];
+// }
+
+// console.log(twoSum([3, 3, 5, 5], 8));
+
+// const arr = [5,8,24,23,13,56,2,24,1,90];
+// let initialArr = arr[0];
+// for(let i=0; i<arr.length; i++){
+//     // log(arr[i])
+//     if(arr[i] < initialArr){
+//         initialArr=arr[i];
+//     }
+// }
+// log(initialArr)
+
+// const arr = [100, 50, 40, 55, 43, 10, 5, 4, 11, 77, 62];
+// let firstElem = arr[0];
+// let secondElem = arr[0];
+ 
+// for(let i=0; i<arr.length; i++){
+//     if(arr[i] < firstElem){
+//         secondElem = firstElem;
+//         firstElem = arr[i];
+//     }else if(secondElem < arr[i] && arr[i] > firstElem){
+//         secondElem = arr[i];
+//     }
+// }
+// console.log(secondElem)
+
+// const arr = [100, 50, 40, 55, 43, 10, 5, 4, 11, 77, 62];
+// let len = arr.length;
+// let index = Math.floor(len / 2);
+// let indexItem = arr[index];
+// log(indexItem)
+
+// const arr = [100, 50, 40, 55, 43, 10, 5, 4, 11, 77, 62];
+// let firstElem = arr[0];
+// let secondElem = arr[0];
+// for(let i=0; i<arr.length; i++){
+//     if(arr[i] < firstElem){ 
+//         secondElem = firstElem;
+//         firstElem = arr[i]; 
+//     } else if(secondElem < arr[i] && arr[i] > firstElem){ 
+//         secondElem=arr[i];
+//     }
+// }
+// log(secondElem)
+
+// const arr = [100, 50, 40, 55, 43, 10, 5, 4, 11, 77, 62];
+
+// for(let i=0; i<arr.length; i++){
+//     for(let k=0; k<arr.length -i -1; k++){
+//         if(arr[k] > arr[k +1]){
+//             let temp = arr[k];
+//             arr[k] = arr[k +1];
+//             arr[k +1] = temp;
+//         }
+//     }
+// }
+// log(arr);
+
+// function twoSum(numb, target){
+//     let store = [];
+//     for(let i=0; i<numb.length; i++){
+//         let compireson = target - numb[i];
+//         if(store[compireson] != undefined){ 
+//             return [store[compireson], i];
+//         }
+//         store[numb[i]]=i;
+//         // log(store[compireson])
+//     }
+//     return [];
+// }
+
+// console.log(twoSum([2,7,11,15], 9));
+
+
+// var name = "bhai";
+// function getName(){
+//     log(name);
+//     var name = "dost";
+//     log(name);
+// }
+// getName();
+
+
+// function fetchData(){
+//     return new Promise((res, rej)=>{
+//         setTimeout(()=>{
+//             res("data fatching...");
+//         }, 2000)
+//     })
+// }
+
+// async function getData(){
+//     log("starting...");
+//     const data = await fetchData();
+//     console.log(data);
+//     log("ending...");
+// }
+// getData();
+
+// (function() {
+//     var privateVar = "I am private";
+//     console.log(privateVar); // Output: I am private
+// })();
+
+// // console.log(privateVar);
+ 
+// ((name) => {
+//     log(`hey my name is ${name}`);
+// })("shuvadeep")
+
+// const arr = [5,4,3,2,1,0,-1,-2];
+// let blnkArr=[];
+// for(let i=arr.length -1; i>=0; i--){
+//     // log(arr[i])
+//     blnkArr.push(arr[i]);
+// }
+// log(blnkArr)
+
+// const str = "shuvadeep";
+// let storeStr="";
+// for(let i=str.length -1; i>=0; i--){
+//     storeStr+=str[i]
+//     // storeStr.push(str[i])
+// }
+// log(storeStr)
+
+// function test(){
+//     log(test.abc);
+// }
+// test();
+// test.abc = 400;
+// test.abc = 600;
+// test();
+ 
+// let a = {
+//     name: "shuvadeep",
+// }
+// let b = {
+//     ...a
+// }
+
+// b.name="raja";
+// log(a.name)
+
+// let x = 10;
+// let b = new Number(10);
+// let c =10;
+// log(x === b)
+
+
+// log(+true)
+// log(!'true')
+
+// let names = "PHP Java React Dotnet Node";
+// let arr = names.split(" ");
+// let removeArr = arr.splice(2, 1)
+// let changePos = arr.splice(0, 0, removeArr[0])
+// let cnvrtStr = arr.join(", ")
+// log(cnvrtStr)
+
+// function removeDuplicates(dup){
+//     let unique = [];
+//     for(let i=0; i<dup.length; i++){
+//         if(unique.indexOf(dup[i]) == -1){ 
+//             unique.push(dup[i])
+//         }
+//     }
+//     return unique;
+// }
+
+// let removedArr = removeDuplicates([1, 2, 1, 3, 4, 2, 2, 1, 5, 6]);
+// log(removedArr)
+
+// function x(){
+//     function closure(x){
+//         setTimeout(()=>{
+//             console.log(x);
+//         }, i * 1000)
+//     }
+//     for(var i=1; i<=5; i++){
+//         closure(i)
+//     } 
+// }
+// x(); 
+
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let getdata = arr.every(num => num > 1);
+// log(getdata);
+
+// function isPalimdrome(param){
+//     let str ="";
+//     for(let i=param.length -1; i>=0; i--){
+//         // log(param[i])
+//         str += param[i];
+//     } 
+//     if(str == param){
+//         return true;
+//     }else{
+//         return false;
+//     }
+
+// }
+// palimdrome = isPalimdrome("madam");
+// log(palimdrome)
+
+// function wordCount(word){
+//     let wordArr = word.split(" ");
+//     // log(wordArr)
+//     let store = {};
+//     for(let i=0; i<wordArr.length; i++){
+//         let char = wordArr[i];
+//         if(store[char] != undefined){
+//             store[char]++;
+//         }else{
+//             store[char]=1;
+//         }
+//     }
+//     return store;
+// }
+// let words = wordCount("Hello worlds");
+// log(words)
+
+// const arr = [1,2,3,4,5,6];
+// let len = arr.length -1;
+// let cal =  Math.floor(len / 2);
+// let indx = arr[cal];
+// log(indx)
+
+// function twoSum(num, target){
+//     let store = {};
+//     for(let i=0; i<num.length; i++){
+//         let compireson = target - num[i]; 
+//         if(store[compireson] != undefined){
+//             return [store[compireson], i];
+//         }
+//         store[num[i]]=i;
+//         // log(store[compireson])
+//     }
+//     return [];
+// }
+
+// let sum = twoSum([7, 7, 4, 1], 14);
+// log(sum)
+// function checkVowel(str){
+//     let count=0;
+//     for(let i=0; i<str.length; i++){
+//         let vowelArr = ['a','e','i','o','u'];
+//         if(vowelArr.includes(str[i])){
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+// let string = "Hello world, This is a program";
+// let chkVowel = checkVowel(string);
+// log(chkVowel)
+
+// function removeDuplicates(dup){
+//     let store=[];
+//     for(let i=0; i<dup.length; i++){
+//         // log(dup[i])
+//         if(store.indexOf(dup[i])== -1){
+//             store.push(dup[i])
+//         }
+//     }
+//     return store;
+// }
+// let removedArr = removeDuplicates([1, 2, 1, 3, 4, 2, 2, 1, 5, 6]);
+// console.log(removedArr);
+
+// function febonacci(n){
+//     let febonacciSeries = [0, 1];
+//     for(let i=2; i<n; i++){
+//         febonacciSeries[i] = febonacciSeries[i -1] + febonacciSeries[i -2]
+//     }
+//     return febonacciSeries;
+// }
+
+// let febo = febonacci(10);
+// log("febonacci series: ", febo.join(", "));
+
+// function febonacci(f){ 
+//     let feb = [0, 1];
+//     for(let i=2; i<f; i++){
+//         feb[i] = feb[i -1] + feb[i -2];
+//     }
+//     return feb;
+// }
+
+
+// let febo = febonacci(10);
+// log("febonacci series: ", febo.join(", "));
+
+
+// function chkVowel(vowel){
+//     let coun=0;
+//     for(let i=0; i<vowel.length; i++){
+//         let vowelArr = ['a','e','i','o','u']
+//         if(vowelArr.includes(vowel[i])){
+//             coun++;
+//         }
+//     }
+//     return coun;
+// }
+
+// let fn = chkVowel("shuvadeep podder");
+// log(fn);
+
+
+
+// let arr = [1,2,3,1,3,2,5,4,5,5,7,7,7,6];
+// let unique = [];
+// for(let i=0; i<arr.length; i++){
+//     if(unique.indexOf(arr[i])== -1){
+//         unique.push(arr[i])
+//     }
+// }
+// log(unique)
+ 
+
+// console.log(getData1)
+// var getData1 = 5;
+
+
+/* function cleanArray(arr){
+    let result = [];
+    for(let value of arr){
+        if(value){ 
+            result.push(value);
+        }
+    }
+    return result;
+}
+
+let uncleanedArr = [0, 1, false, 2, "", 3, undefined, NaN]; 
+log(cleanArray(uncleanedArr)) */
+
+
+
+// function cleanArr(arr){
+//     let result = [];
+//     for(val of arr){
+//         if(val){
+//             result.push(val)
+//         }
+//     }
+//     return result;
+// }
+
+// let uncleanedArr = [0, 1, false, 2, "", 3, undefined, NaN]; 
+// log(cleanArr(uncleanedArr));
+
+/* function chkVowel(arr){
+    let count = 0;
+    for(val of arr){
+        let vowelArr = ['a','e','i','o','u'];
+        if(vowelArr.includes(val)){
+            count++;
+        }
+    }
+    return count;
+}
+
+let fn = chkVowel("hello world");
+log(fn); */
+
+
+// function largeWord(word){
+//     let wordArr = word.split(" "); 
+//     let longWord = "";
+//     for(val of wordArr){ 
+//         if(val.length > longWord.length){
+//             longWord = val; 
+//         }
+//     } 
+//     return longWord;
+// }
+
+// let fn = largeWord("hello i am shuvadeep how are you");
+// log(fn)
+
+
+
+
+// function leapYear(years){ 
+//     let res = [];
+//     for(year of years){ 
+//         if(year % 4 === 0 && year % 100 !== 0 || year % 400 === 0){
+//             res.push(year + " Leap Year");
+//         }else{
+//             res.push(year + " Not Leap Year");
+//         }
+//     }   
+//     return res;
+// }
+// const years = [2021, 2022, 2023, 2024, 2025, 2026];
+// log(leapYear(years).join("\n"))
+
+
+// function febonacci(num){
+//     let feb = [0, 1];
+//     for(let i=2; i<num; i++){
+//         feb[i] = feb[i -1] + feb[i -2];
+//     }
+//     return feb;
+// }
+// log(febonacci(10));
+
+
+// log(sum(2,4,6,8,10))
+// const chain = (a) => (b) => (c) => (d) => a + b + c + d;
+// log(chain(4)(6)(8)(10))
+
+// let x = {};
+// let y = { x: 10, y: 20 };
+// y[x] = 123;
+// x[y] = 143;
+// log(y)
+
+// var input = [1, 2, [3, 4, [5, 6], 7, 8], 9, 10];
+// var output = input.flat(Infinity);
+// log(output) // Output:  [ 1, 2, 3, 4,  5, 6, 7, 8, 9, 10 ]
+
+
+// function reverseArr(arr){
+//     let newArr = [];
+//     for(let i=arr.length -1; i>=0; i--){
+//         newArr.push(arr[i]);
+//     }
+//     return newArr;
+// }
+
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let rev= reverseArr(arr);
+// log(rev)
