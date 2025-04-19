@@ -192,7 +192,45 @@ log(a.name)
 const chain = (a) => (b) => (c) => (d) => a + b + c + d;
 log(chain(4)(6)(8)(10))
 
-/* 20. write a code to output shows will this [ 1, 2, 3, 4,  5, 6, 7, 8, 9, 10 ] */
+/* 20. write a code to output shows will this flatten array [ 1, 2, 3, 4,  5, 6, 7, 8, 9, 10 ] */
 var input = [1, 2, [3, 4, [5, 6], 7, 8], 9, 10];
 var output = input.flat(Infinity);
 log(output) // Output:  [ 1, 2, 3, 4,  5, 6, 7, 8, 9, 10 ]
+
+/* 21. question is write a code to when i access show Ref Err value contain this block scope  */
+
+function show(){
+    {
+        var x = 10;
+        var y = 20;
+    }
+    log(x, y);
+}
+show()
+// Answer:
+/* function show(){
+    {
+        (function() {
+            var x = 10;
+            var y = 20;
+        })();
+    }
+    log(x, y);
+}
+show(); */
+
+/* What is the output? */
+let x = [1,2,3];
+let y = "1,2,3";
+log(x == y)
+
+/* How to group by age by using object */
+const people = [
+    { name: 'shuvadeep', age: 25 },
+    { name: 'Bapi', age: 30 },
+    { name: 'john', age: 25 },
+    { name: 'kishore kumar', age: 32 },
+];
+
+const grouping = Object.groupBy(people, p => p.age);
+log(grouping)
