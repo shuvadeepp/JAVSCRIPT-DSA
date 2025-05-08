@@ -266,10 +266,10 @@ log(fn) */
 
 
 // let arr = [1,[2,3,[4,5],6,7],8];
-// let arr = [1, [2, [3, 4], [7,5]], 6];
+// let arr = [1, [2, [3, 4], [5,6]], 7];
 // function flatterArr(arr, result=[]){
 //     for(val of arr){
-//         // log(val)
+//         //  log(val)
 //         if(Array.isArray(val)){
 //             flatterArr(val, result)
 //         }else{
@@ -299,3 +299,248 @@ log(fn) */
 // const output = findPairs(input1, input2);
 // console.log(output);
 // output: [ [ 4, 6 ], [ 3, 7 ], [ 2, 8 ], [ 1, 9 ] ]
+
+/* async function foo(){
+    log("1")
+    await log("2")
+    log("3")
+}
+log("4")
+foo();
+log("5") */
+
+/* let count=0;
+(function (){ 
+    if(count == 0){
+        let count=1;
+        log(count);
+    }
+    log(count);
+})(); */
+
+
+/* var variable = 10;
+variable = variable++;
+log(variable);  */
+
+
+/* function countLetter(letterStr){
+    let lowCase = letterStr.toLowerCase();
+    let store = {}; 
+    for(let i=0; i<lowCase.length; i++){ 
+        let char = lowCase[i];
+        if(char > 'a' && char <='z'){ 
+            if(store[char] != undefined){
+                store[char]++;
+            }else{
+                store[char]=1;
+            }
+        }
+    }
+    return store;
+}
+let fn = countLetter("shuvadeep");
+log(fn) */
+
+// let arr = [1,2,3,4,5];
+// let obj = arr.reduce((acc, curval, i)=>{
+//     acc[i] = curval;
+//     return acc;
+// }, {});
+// let conrtArr = Object.values(obj);
+// log(conrtArr)
+
+// let a = 10;
+// let b = 20;
+// [b, a] = [a, b];
+// log(b)
+
+// let arr = [1,4,2,5,3];
+// for(let i=0; i<arr.length; i++){
+//     for(let k=0; k<arr.length -i -1; k++){
+//         if(arr[k] > arr[k +1]){
+//             let temp = arr[k];
+//             arr[k] = arr[k +1];
+//             arr[k +1] = temp;
+//         }
+//     }
+// }
+// log(arr);
+
+// let obj = {a: 1,b: 2,c: { d: 4, e: { f: 6 }, g: 7, h: 8 }, i: 9, j: 10}
+ 
+// function flattObject (obj, parentKey='', result={}){
+//  // log(obj)
+//    for(let key in obj){  
+//      let newKey = parentKey ? `${parentKey}.${key}` : key; 
+//     //  log("obj ::::: ", obj[key])
+//      if(typeof obj[key] === 'object' && obj[key] !== null){
+//         flattObject(obj[key], newKey, result);
+//      }else{
+//         result[newKey] = obj[key];
+//         // log(result[newKey])
+//      }
+//     //  log(parentKey ? `${parentKey}.${key}` : key);
+//    }
+//    return result;
+// }
+
+// let fn = flattObject(obj);
+// log(fn)
+
+// var input = [1, 2, [3, 4, [5, 6], 7, 8], 9, 10];
+// function flattArr(input, result=[]){
+//     for(let i=0; i<input.length; i++){
+//         // log(input[i]);
+//         if(Array.isArray(input[i])){
+//             flattArr(input[i], result);
+//         } else {
+//             result.push(input[i]);
+//         }
+//     }
+//     return result;
+// }
+// let fn = flattArr(input);
+// log(fn)
+
+/* function febonnaci(n){
+    let feb = [1, 2];
+    for(let i=2; i<n; i++){
+        feb[i] = feb[i -1] + feb[i -2];
+    }
+    return feb;
+}
+let fn = febonnaci(10);
+log(fn) */
+
+/* function is_palindrome(param){
+    // log(param)
+    let reverse="";
+    for(let i=param.length -1; i>=0; i--){
+        // log(param[i])
+        reverse+=param[i];
+    } 
+    if(reverse === param){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+let fn = is_palindrome("152");
+log(fn) */
+
+/* let arr=[9,5,2,7,1,3,8,6,4];
+
+for(let i=0; i<=arr.length; i++){
+    for(let k=0; k<=arr.length; k++){
+        if(arr[k] >= arr[k +1]){
+            // log(arr[k])
+            let temp = arr[k];
+            arr[k] = arr[k+1];
+            arr[k+1] = temp;
+        }
+    }
+}
+log(arr); */
+
+/* function febonaci(n){
+    let feb = [0, 1];
+    for(let i=2; i<n; i++){
+
+        log(feb[i-1])
+
+        // feb[i] = feb[i -1] + feb[i -2];
+    } 
+    // return feb;
+}
+let fn = febonaci(10);
+log(fn)
+ */
+
+/* function maxSubarraySum(arr, k) {
+    if (arr.length < k) return null;
+  
+    let windowSum = 0;
+    // First window sum
+    for (let i = 0; i < k; i++) {
+      windowSum += arr[i];
+    }
+  
+    let maxSum = windowSum;
+  
+    // Slide the window
+    for (let i = k; i < arr.length; i++) {
+      windowSum = windowSum - arr[i - k] + arr[i];
+      maxSum = Math.max(maxSum, windowSum);
+    }
+  
+    return maxSum;
+  }
+  
+
+const arr = [2, 1, 5, 1, 3, 2];
+const k = 3;
+console.log(maxSubarraySum(arr, k)); */
+
+
+
+// function chunkArray(arr, size) {
+//     let result = [];
+//     for (let i = 0; i < arr.length; i += size) {
+//         // log(arr.slice(i, i + size))
+//       result.push(arr.slice(i, i + size));
+//     }
+//     return result;
+// }
+// console.log(chunkArray([1, 2, 3, 4, 5, 6], 2));  
+
+/* function countVowels(str) {
+    // Your implementation
+    let count = 0;
+    if (str != "") {
+        for (let i = 0; i <= str.length; i++) {
+            let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'i', 'O', 'U'];
+            if (vowels.includes(str[i])) {
+                count++;
+            }
+        }
+    }else{
+        count = 0;
+    }
+    
+    return count;
+}
+countVowels("") */
+
+
+
+
+function isAnagram(str1, str2) {
+    str1 = str1.toLowerCase();
+    str2 = str2.toLowerCase();
+    if(str1.length !== str2.length) return false;
+     
+     const count = {};
+     
+     for(let char of str1){
+   
+        if(count[char] != undefined){
+            count[char]++;
+        }else{
+          count[char]= 1;
+        }
+     }
+   
+    for(let char of str2){ 
+      if(!count[char]) return false;
+        count[char]--;
+    }
+    
+    return true;
+  }
+  
+  let fn = isAnagram("dormitory", "dirty room");
+  
+  
+  console.log(fn);

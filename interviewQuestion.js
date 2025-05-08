@@ -234,3 +234,32 @@ const people = [
 
 const grouping = Object.groupBy(people, p => p.age);
 log(grouping)
+
+/* what is the output? */
+async function foo(){
+    log("1")
+    await log("2")
+    log("3")
+}
+log("4")
+foo();
+log("5")
+// output: 4  1  2  5  3
+/* log("2") runs immediately (it’s just a normal function, not a promise), so it prints 2.
+
+But because of the await, JavaScript treats the rest of the function (log("3")) as asynchronous — meaning it's deferred and placed in the microtask queue. */
+
+/* what is the output? */
+var variable = 10;
+variable = variable++;
+log(variable); 
+
+/* what is the output? */ 
+let count=0;
+(function (){ 
+    if(count == 0){
+        let count=1;
+        log(count);
+    }
+    log(count);
+})();
