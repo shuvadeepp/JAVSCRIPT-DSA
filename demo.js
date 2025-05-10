@@ -516,7 +516,7 @@ countVowels("") */
 
 
 
-function isAnagram(str1, str2) {
+/* function isAnagram(str1, str2) {
     str1 = str1.toLowerCase();
     str2 = str2.toLowerCase();
     if(str1.length !== str2.length) return false;
@@ -543,4 +543,57 @@ function isAnagram(str1, str2) {
   let fn = isAnagram("dormitory", "dirty room");
   
   
-  console.log(fn);
+  console.log(fn); */
+
+
+
+
+
+
+/* function maxSumSubarray(arr, k){
+    if(arr.length < k) {
+        throw new Error("Array length must be at least k");
+    }
+    let windowSum=0;
+    for(let i=0; i<k; i++){
+        windowSum+=arr[i];  
+    }
+    let maxSum = windowSum;
+ 
+    for(let i=k; i<arr.length; i++){ 
+        
+        windowSum += arr[i] - arr[i - k]
+        maxSum = Math.max(maxSum, windowSum); 
+    }   
+    return maxSum;
+}
+
+const arr = [2, 1, 5, 1, 3, 2];
+const k = 3;
+console.log(maxSumSubarray(arr, k)); // Output: 9 (5 + 1 + 3)
+ */
+
+function mergeSortedArrays(arr1, arr2){
+    let marge = [];
+    for(let i=0; i<arr1.length; i++){
+        marge.push(arr1[i]);
+    } 
+    for(let i=0; i<arr2.length; i++){
+        marge.push(arr2[i]);
+    }  
+    // [ 1, 3, 5, 2, 4, 6 ]
+    for(let k=0; k<=marge.length -1; k++){
+        for(let j=0; j<=marge.length -k -1; j++){
+            if(marge[j] < marge[j -1]){
+                let temp = marge[j];
+                marge[j] = marge[j-1];
+                marge[j-1] = temp;
+            }
+        }
+    }
+    return marge;
+}
+
+const a = [1, 3, 5];
+const b = [2, 4, 6];
+let fn = mergeSortedArrays(a, b);
