@@ -263,3 +263,10 @@ let count=0;
     }
     log(count);
 })();
+
+/* what is the output? */
+var y = 1;
+if(function f(){}){
+    y += typeof f;
+}
+log(y);

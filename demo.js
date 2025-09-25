@@ -573,7 +573,7 @@ const k = 3;
 console.log(maxSumSubarray(arr, k)); // Output: 9 (5 + 1 + 3)
  */
 
-function mergeSortedArrays(arr1, arr2){
+/* function mergeSortedArrays(arr1, arr2){
     let marge = [];
     for(let i=0; i<arr1.length; i++){
         marge.push(arr1[i]);
@@ -596,4 +596,88 @@ function mergeSortedArrays(arr1, arr2){
 
 const a = [1, 3, 5];
 const b = [2, 4, 6];
-let fn = mergeSortedArrays(a, b);
+let fn = mergeSortedArrays(a, b); */
+
+/* 
+    Rotate Array by K Steps
+    Input: [1, 2, 3, 4, 5], K=2 → Output: [4, 5, 1, 2, 3]
+*/
+
+/* function rotateArr(arr, k){
+    let n = k % arr.length; 
+    let rotate = [];
+    
+    for(let i=arr.length -n; i<arr.length; i++){
+        rotate.push(arr[i])
+    }
+
+    for(let i=0; i<arr.length -n; i++){ 
+        rotate.push(arr[i])
+    }
+    
+    return rotate;
+}
+let arr = [1, 2, 3, 4, 5];
+let k = 2;
+let fn = rotateArr(arr, k); 
+log(fn) */
+
+
+/* let a = [1,2,3];
+let b = a;
+a = [4,5,6];
+log(b);  */
+
+
+// const x = [];
+// x[4] = 1;
+// // console.log(x);
+// x.forEach((i, val)=>{
+//     console.log("hi ::: ", i);
+// });
+
+
+/* function flatterArray(arr, result=[]){
+    
+    for(let i=0; i<arr.length; i++){ 
+        if(Array.isArray(arr[i])){
+            flatterArray(arr[i], result);
+        }else{
+            result.push(arr[i]);
+        }
+    }
+    return result;
+}
+
+var input = [1, 2, [3, 4, [5, 6], 7, 8], 9, 10];
+let fn = flatterArray(input);
+log(fn) */
+
+// function chunkArr(arr, size){
+//     // log(size)
+//     let result =[];
+//     for(let i=0; i<arr.length; i+=size){
+// // log(arr.slice(i, i+size))
+// result.push(arr.slice(i, i+size));
+//     }
+//     return result;
+// }
+
+// let fn = chunkArr([1, 2, 3, 4, 5, 6, 7, 8], 2);
+// log(fn)
+
+const people1 = [
+    { name: 'shuvadeep', age: 25 },
+    { name: 'Bapi', age: 30 },
+    { name: 'john', age: 25 },
+    { name: 'kishore kumar', age: 32 },
+];
+const grouping = Object.groupBy(people1, p => p.age);
+// log(grouping)
+
+
+function DoSomething(x, y){ 
+    arguments[1] = 15; 
+    return x + y;
+}
+log(DoSomething(5, 5));
