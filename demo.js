@@ -666,18 +666,33 @@ log(fn) */
 // let fn = chunkArr([1, 2, 3, 4, 5, 6, 7, 8], 2);
 // log(fn)
 
-const people1 = [
-    { name: 'shuvadeep', age: 25 },
-    { name: 'Bapi', age: 30 },
-    { name: 'john', age: 25 },
-    { name: 'kishore kumar', age: 32 },
-];
-const grouping = Object.groupBy(people1, p => p.age);
+// const people1 = [
+//     { name: 'shuvadeep', age: 25 },
+//     { name: 'Bapi', age: 30 },
+//     { name: 'john', age: 25 },
+//     { name: 'kishore kumar', age: 32 },
+// ];
+// const grouping = Object.groupBy(people1, p => p.age);
 // log(grouping)
 
 
-function DoSomething(x, y){ 
-    arguments[1] = 15; 
-    return x + y;
+// function DoSomething(x, y){ 
+//     arguments[1] = 15; 
+//     return x + y;
+// }
+// log(DoSomething(5, 5));
+
+
+function checkParam() {
+  throw new Error("Name is required!");
 }
-log(DoSomething(5, 5));
+
+function check(name=checkParam()){
+  log(name);
+}
+ 
+try {
+    check()
+} catch(err){
+    log("Err:", err.message);
+}
